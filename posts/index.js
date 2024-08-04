@@ -21,4 +21,5 @@ app.post('/posts', (req, res) => {
 
 app.listen(4000, () => {
     console.log('listeing on 4000');
-})
+
+});
