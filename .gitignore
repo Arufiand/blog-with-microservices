@@ -130,3 +130,9 @@ dist
 .yarn/install-state.gz
 .pnp.*
 
+/.idea/blog-boilerplate.iml
+/.idea/git_toolbox_prj.xml
+/.idea/jsLibraryMappings.xml
+/.idea/modules.xml
+/client/package-lock.json
+/.idea/vcs.xml
