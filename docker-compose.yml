@@ -1,0 +1,36 @@
+version: '3.8'
+services:
+  blog-client:
+    container_name: blog-name
+    build:
+      context: ./client
+      dockerfile: Dockerfile
+    volumes:
+      - ./client/src:/app/src
+      - /app/node_modules
+    ports:
+      - '3000:3000'
+    stdin_open: true
+    tty: true
+
+  blog-comment:
+    container_name: blog-comment
+    build:
+      context: ./comments
+      dockerfile: Dockerfile
+    ports:
+      - '4001:4001'
+    volumes:
+      - ./comments:/app
+      - /app/node_modules
+
+  blog-posts:
+    container_name: blog-posts
+    build:
+      context: ./posts
+      dockerfile: Dockerfile
+    ports:
+      - '4000:4000'
+    volumes:
+      - ./posts:/app
+      - /app/node_modules
