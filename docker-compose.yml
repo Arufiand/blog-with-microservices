@@ -34,3 +34,36 @@ services:
     volumes:
       - ./posts:/app
       - /app/node_modules
+
+  blog-query:
+    container_name: blog-query
+    build:
+      context: ./query
+      dockerfile: Dockerfile
+    ports:
+      - '4002:4002'
+    volumes:
+      - ./query:/app
+      - /app/node_modules
+
+  blog-moderation:
+    container_name: blog-moderation
+    build:
+      context: ./moderation
+      dockerfile: Dockerfile
+    ports:
+      - '4003:4003'
+    volumes:
+      - ./moderation:/app
+      - /app/node_modules
+
+  blog-event-bus:
+    container_name: blog-event-bus
+    build:
+      context: ./event-bus
+      dockerfile: Dockerfile
+    ports:
+      - '4005:4005'
+    volumes:
+      - ./event-bus:/app
+      - /app/node_modules
